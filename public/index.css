@@ -1,0 +1,38 @@
+
+.box{
+    margin: 4% 30%;
+    text-align: center;
+}
+.list{
+    border: 2px solid black;
+    margin: 2% 30%;
+    text-align: center;
+    display: grid;
+    grid-auto-flow: column;
+
+    grid-template-columns:4fr 1fr ;
+}
+.listBox{
+    border: 2px solid black;
+    margin: 4% 20%;
+}
+.tododlete{
+    text-decoration: none;
+    background-color: purple;
+    color: antiquewhite;
+}
+.tododlete:hover{
+    background-color: green;
+    color: antiquewhite;
+    transition: 0.5s;
+}
+.addBtn{
+    background-color: purple;
+    color: antiquewhite;
+}
+.addBtn:hover{
+    background-color: green;
+    color: antiquewhite;
+    transition: 0.5s;
+    cursor: pointer;
+}

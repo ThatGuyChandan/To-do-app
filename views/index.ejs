@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <div class="box">
+        <h1>To-Do List</h1>
+        <form action="/" method="POST">
+            <input type="text" name="add" required>
+            <button type="submit" class="addBtn">Add</button>
+    
+        </form>
+            </div>
+            <div class="listBox">
+                <%  if(data){ %>
+                    <%  data.forEach(add => {   %>
+                        <div class="list">
+                        <div>
+                            <%=add.todo %>
+                        </div>
+                        <a href="" class="tododlete <%=add.id %>">delete</a>
+                        </div>
+                   
+                  <%  }); %>
+                  <%  }  %>
+    
+            </div>
+           
+              <script>
+                const deleteBtn= document.querySelectorAll(".tododlete");
+                deleteBtn.forEach((button,i)=>{
+                    button.addEventListener("click",()=>{
+                        const endPoint = `/${button.classList[1]}`
+                        fetch(endPoint,{
+                            method:"DELETE"
+                        })
+                     window.location.href("/")
+                    })
+                })
+              </script>
+</body>
+</html>
